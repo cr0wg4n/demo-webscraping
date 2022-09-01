@@ -52,9 +52,9 @@ pages = {
 
 def get_episodies_netflix(soup):
     data = []
-    seasons = soup.findAll("div", { "class": "episodes-container"})
+    seasons = soup.findAll("ol", { "class": "episodes-container"})
     for index, season in enumerate(seasons):
-        episodes = season.findAll("div", { "class": "episode" })
+        episodes = season.findAll("li", { "class": "episode" })
         for episode in episodes:
             item = {}
             image = episode.find('img')["src"]
